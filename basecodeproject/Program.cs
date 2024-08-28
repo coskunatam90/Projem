@@ -49,6 +49,4 @@ app.MapControllerRoute(
 
 app.Run();
 
-//ilk
-
-//deneme
+ 
