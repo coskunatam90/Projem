@@ -35,13 +35,12 @@ namespace basecodeproject.Controllers
         {
 
             var hasUser = await _userManager.FindByEmailAsync(email);
-            if (hasUser == null)
-            {
-                return View();
-            }
+            if (hasUser == null)  return View();
+          
 
             var signInResult = await _signInManager.PasswordSignInAsync(hasUser,password,true,false);
-             
+
+
 
 
 
