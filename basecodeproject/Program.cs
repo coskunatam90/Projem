@@ -11,7 +11,6 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppIdentityDbContext>(options =>
 {
-
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer"));
     
 }
@@ -49,4 +48,3 @@ app.MapControllerRoute(
 
 app.Run();
 
- 
