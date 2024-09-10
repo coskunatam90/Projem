@@ -1,7 +1,9 @@
 ﻿using basecodeproject.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.DependencyInjection;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -35,10 +37,11 @@ var app = builder.Build();
 using(var scope =app.Services.CreateScope())
 {
 
-    var identitydbcontext = scope.ServiceProvider.GetRequiredService(app.Services.GetType());
+    var identitydbcontext = scope.ServiceProvider.GetRequiredService<AppIdentityDbContext>();
 
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<AppUser>>;
 
+    identitydbcontext.Database.Migrate(); //  ile uygulama ayağa kalktığında otomatik olarak update - migration çalıştırıyor
 };
 
 
