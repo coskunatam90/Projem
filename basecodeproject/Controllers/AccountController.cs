@@ -53,6 +53,12 @@ namespace basecodeproject.Controllers
 
         }
 
+        public async Task<ActionResult> Logout() {
+            await _signInManager.SignOutAsync();
+            return RedirectToAction(nameof(HomeController.Index), "Home");
+
+
+        }
 
 
     }
