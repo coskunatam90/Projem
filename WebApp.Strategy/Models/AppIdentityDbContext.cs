@@ -1,7 +1,6 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using WebApp.Strategy.Models;
 
 namespace basecodeproject.Models
 {
@@ -11,9 +10,6 @@ namespace basecodeproject.Models
 		{
 
 		}
-
-
-		public DbSet<Product> Products { get; set; }
 	}
 }
 
