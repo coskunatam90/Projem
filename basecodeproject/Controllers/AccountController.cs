@@ -40,25 +40,12 @@ namespace basecodeproject.Controllers
 
             var signInResult = await _signInManager.PasswordSignInAsync(hasUser,password,true,false);
 
-            //if (signInResult.RequiresTwoFactor)
-            //{
-            //OTP veya sms ile giriş için kullanılır.
-            //}
 
-            if (!signInResult.Succeeded)
-            {
-                return View();
-            }
-            return RedirectToAction(nameof(HomeController.Index), "Home");
 
-        }
-
-        public async Task<ActionResult> Logout() {
-            await _signInManager.SignOutAsync();
-            return RedirectToAction(nameof(HomeController.Index), "Home");
 
 
         }
+
 
 
     }
